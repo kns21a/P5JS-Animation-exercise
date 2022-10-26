@@ -34,6 +34,8 @@ function setup() {
 
   rect(1224.8, y, 10, 10);
   //placement of rects are correct but size, color, and reactions to noise will need to be altered.
+  //add an effect that has the rect ocilate between the x and y of the canvas when audio is recieved (if possible).
+  //ocilating speed will corralate with the frequancy input recieved via microphone. 
 }
 
 //function draw(){rect(282.65, y, 10, 694); rect(471.08, y, 10, 694); rect(1319/2, y, 10, 694);rect(847.94, y, 10, 694); rect(1036.37, y, 10, 694); rect(1224.8, y, 10, 694);}
