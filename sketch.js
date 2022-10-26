@@ -33,7 +33,7 @@ function setup() {
   rect(1036.37, y, 10, 10);
 
   rect(1224.8, y, 10, 10);
-  //placement of rects are correct but size, color, and reactions to noise will be altered.
+  //placement of rects are correct but size, color, and reactions to noise will need to be altered.
 }
 
 //function draw(){rect(282.65, y, 10, 694); rect(471.08, y, 10, 694); rect(1319/2, y, 10, 694);rect(847.94, y, 10, 694); rect(1036.37, y, 10, 694); rect(1224.8, y, 10, 694);}
