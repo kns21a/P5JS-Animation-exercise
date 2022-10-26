@@ -1,25 +1,46 @@
 function setup() {
-  createCanvas(1319, 695);
-  noCursor();
-  frameRate(50);
+  createCanvas(1319, 694);
+
+  let cnv = createCanvas(1319, 694);;
+  cnv.mousePressed(userStartAudio);
+  textAlign(CENTER);
+  mic = new p5.AudioIn();
+  mic.start();
 
 
 }
+function draw(){
+  rect(282.65, y, 10, 10);
 
-function draw() {
-  background(0, 59);
-  noStroke();
-  fill(200, 45, 10);
-  rect(0, 0, 359.5, 347.5);
-  rect(959.5, 0, 400, 1000);
-  rect(500, 380, 400, 1000)
-  erase();
-  rect(mouseX, mouseY, pmouseX, [pmouseY]);
-  print(pmouseX + ' -> ' + mouseX);
-  describe(`line trail is created from cursor movements.
-    faster movement make longer line.`);
-    noErase();
-    rect(959.5, 347.5, 1000, 1000);
-    rect(347.5, 0, 359.5, 347.5);
-    rect(300, 0, 50, 1000)
+  rect(471.08, y, 10, 10);
+
+  rect(1319/2, y, 10, 10);
+
+  rect(847.94, y, 10, 10);
+
+  rect(1036.37, y, 10, 10);
+
+  rect(1224.8, y, 10, 10);}
+
+  function draw() {
+  background(0);
+  fill(255);
+
+  text('tap to start', width/2, 20);
+
+  micLevel = mic.getLevel();
+  let y = height - micLevel * height;
+  rect(94.22, y, 10, 10);
+
+  rect(282.65, y, 10, 10);
+
+  rect(471.08, y, 10, 10);
+
+  rect(1319/2, y, 10, 10);
+
+  rect(847.94, y, 10, 10);
+
+  rect(1036.37, y, 10, 10);
+
+  rect(1224.8, y, 10, 10);
 }
