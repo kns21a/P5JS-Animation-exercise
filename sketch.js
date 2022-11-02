@@ -1,6 +1,6 @@
 
 let y= 0;
-let speed = 2
+let speed = 3
 
 function setup() {
   createCanvas(1319, 695);
@@ -8,42 +8,56 @@ function setup() {
 }
 
 function draw() {
-  background(405);
+  background(0);
   
+  fill('yellow')
+  rect(94.22, 347.5, 40, 40);
+  
+  fill('orange')
+  rect(282.65, 547.5, 40, 40);
+  
+  fill('red')
+  rect(471.08,147.5, 40, 40);
+ 
+  fill('purple')
+  rect(1319/2, 447.5, 40, 40);
+  
+  fill('blue')
+  rect(847.94, 347.5, 40, 40);
+  
+  fill('green')
+  rect(1036.37, 247.5, 40, 40);
+ 
+  fill('white')
+  rect(1224.8, 647.5, 40, 40);
+
   y += speed;
 
   fill('yellow');
-  line(114.22, 0, 114.22, 695); // line(x1, y1, x2, y2)
-  rect(94.22, y, 40, 40);
+  rect(94.22, y*1.5, 40, 40);
 
   fill('orange')
-  line(302.65, 0, 302.65, 695); // line(x1, y1, x2, y2)
-  rect(282.65, y, 40, 40);
+  rect(282.65, y*2, 40, 40);
   
   fill('red')
-  line(491.08, 0, 491.08, 695); // line(x1, y1, x2, y2)
   rect(471.08, y, 40, 40);
 
   fill('purple')
-  line(679.9, 0, 679.9, 695); // line(x1, y1, x2, y2)
-  rect(1319/2, y, 40, 40);
+  rect(1319/2, y*1.5, 40, 40);
 
   fill('blue')
-  line(867.94, 0, 867.94, 695); // line(x1, y1, x2, y2)
-  rect(847.94, y, 40, 40);
+  rect(847.94, y*2.5, 40, 40);
 
   fill('green')
-  line(1056.37, 0, 1056.37, 695); // line(x1, y1, x2, y2)
   rect(1036.37, y, 40, 40);
 
   fill('black')
-  line(1244.8, 0, 1244.8, 695); // line(x1, y1, x2, y2)
-  rect(1224.8, y, 40, 40);
-  
+  rect(1224.8, y*1, 40, 40);
   
   // reverses direction of rect
   if (y > 655 || y < 0) {
     speed *= -1;
+    
   }
 }
 
