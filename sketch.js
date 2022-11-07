@@ -1,71 +1,97 @@
+let rectPX = 0;
+let rectPY = 695/2;
+let move = 5
+let speed = 5
 
-let y= 0;
-let speed = 3
+let rectW2X = 0
+let rectW2Y = 317.5
+let rectW2Width = 1319
+let rectW2Height = 10
+
+let rectW3X = 0
+let rectW3Y = 427.5
+let rectW3Width = 1319
+let rectW3Height = 10
+
+let rectW4X = 1319/2
+let rectW4Y = 0
+let rectW4Width = 10
+let rectW4Height = 100
 
 function setup() {
   createCanvas(1319, 695);
- rectMode
+  noCursor();
+   rectMode;
 }
-
+  
 function draw() {
-  background(0);
-  
-  fill('yellow')
-  rect(94.22, 347.5, 40, 40);
-  
-  fill('orange')
-  rect(282.65, 547.5, 40, 40);
-  
-  fill('red')
-  rect(471.08,147.5, 40, 40);
+  background(200);
  
-  fill('purple')
-  rect(1319/2, 447.5, 40, 40);
+  // Start Point
+  noStroke()
+  fill('ywhite');
+  rect (0, 695/2, 60, 60);
   
-  fill('blue')
-  rect(847.94, 347.5, 40, 40);
-  
-  fill('green')
-  rect(1036.37, 247.5, 40, 40);
- 
-  fill('white')
-  rect(1224.8, 647.5, 40, 40);
-
-  y += speed;
-
+  // End Point
+  noStroke()
   fill('yellow');
-  rect(94.22, y*1.5, 40, 40);
-
-  fill('orange')
-  rect(282.65, y*2, 40, 40);
+  rect (1259, 695/2, 60, 60);
   
-  fill('red')
-  rect(471.08, y, 40, 40);
+  // Player rect
+  noStroke();
+  fill('white');
+    if (keyIsDown(LEFT_ARROW)) {
+      rectPX -= 5;
+    }
+    if (keyIsDown(RIGHT_ARROW)) {
+      rectPX += 5;
+    }
+    if (keyIsDown(UP_ARROW)) {
+      rectPY -= 5;
+    }
+    if (keyIsDown(DOWN_ARROW)) {
+      rectPY += 5;
+    }
+    rect(rectPX, rectPY, 30, 30);
 
-  fill('purple')
-  rect(1319/2, y*1.5, 40, 40);
+    // Window Barrier
+  if (rectPX < 0){
+    rectPX = rectPX + move
+  } // left
 
-  fill('blue')
-  rect(847.94, y*2.5, 40, 40);
+  if (rectPX > 1299){
+    rectPX = rectPX - move
+  } // Right
 
-  fill('green')
-  rect(1036.37, y, 40, 40);
+  if (rectPY < 0){
+    rectPY = rectPY + move
+  } // Top
 
-  fill('black')
-  rect(1224.8, y*1, 40, 40);
+  if (rectPY > 665){
+    rectPY = rectPY - move
+  } // Bottom
   
-  // reverses direction of rect
-  if (y > 655 || y < 0) {
-    speed *= -1;
-    
-  }
+    //Maze wall
+  fill ('white')
+  rect(rectW2X, rectW2Y, rectW2Width, rectW2Height)
+
+//   if(rectPX > rectW2X - rectW2Width && rectPX < rectW2X + rectW2Width && rectPY > rectW2Y - rectW2Height && rectPY < rectW2Y + rectW2Height){
+//   move = move*-1;
+// }
+  fill ('white')
+  rect(rectW3X, rectW3Y, rectW3Width, rectW3Height)
+
+  // if(rectPX > rectW3X - rectW3Width && rectPX < rectW3X + rectW3Width && rectPY > rectW3Y - rectW3Height && rectPY < rectW3Y + rectW3Height){
+  //   move = move*-1;
+  // }
+
+  // rectW4Y += speed; 
+
+  fill ('white')
+  rect(rectW4X, rectW4Y, rectW4Width, rectW4Height)
+
+  // if(rectW4Y > 655 || rectW4Y < 0) {
+  //   speed += -1;
+  // }
+
 }
-
-  //placement of ellipses are corellipse but size, color, and reactions to noise will need to be altered.
-  //add an effect that has the rect ocilate between the y of the canvas when audio is recieved (if possible).
-  //ocilating speed will corralate with the frequancy input recieved via microphone. 
-
-
-//function draw(){rect(282.65, y, 40, 694); rect(471.08, y, 40, 694); rect(1319/2, y, 40, 694);rect(847.94, y, 40, 694); rect(4036.37, y, 40, 694); rect(1224.8, y, 40, 694);}
-// The above function is to create the background bars for each corresponding note.
-// needs a function to alter the appearance of each bar as audio input is recieved. For instance a gradiant effect or an altering of the shape/form to indicate that the corellipse frequancy is recieved.
